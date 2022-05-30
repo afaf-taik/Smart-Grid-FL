@@ -50,7 +50,7 @@ def split_input_target(chunk):
   return BatchType(inputX, targetY)
 
 
-#addd .repeat(nbr_epochs) if training for more than 1 local epoch
+#add .repeat(nbr_epochs) if training for more than 1 local epoch
 def preprocess(dataset):
   #return(dataset.shuffle(BUFFER_SIZE).batch(BATCH_SIZE, drop_remainder=True).map(split_input_target))
   #.repeat(2)
@@ -89,8 +89,8 @@ def model_fn():
 
 
 #order the clients ids
-L=data.client_ids
-clientsI=[]
+L = data.client_ids
+clientsI = []
 for i in range(len(L)):
   clientsI.append(int(L[i]))
 clientsI.sort()
